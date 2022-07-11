@@ -39,5 +39,57 @@
             <% } %>
         <% }) %>
     </div>
+
+    <script>
+        // Script tag
+        const script = document.createElement('script'); // Create a script tag
+        script.setAttribute('type', 'application/ld+json'); // Add type=application/ld+json
+        document.head.appendChild(script); // Add script to the head
+
+        // Open-graph image
+        const ogMeta = document.createElement('meta'); // Create a meta tag for open-graph image
+        ogMeta.setAttribute('property', 'og:image'); // Add attribute
+        ogMeta.setAttribute('content', 'https://pbs.twimg.com/profile_images/687990268268773376/ZxsrfCpr_400x400.png'); // Add attribute
+        document.head.appendChild(ogMeta); // Add meta tag for open-graph image to the head
+
+        // Open-graph URL
+        const ogURL = document.createElement('meta'); // Create a meta tag for open-graph image
+        ogURL.setAttribute('property', 'og:url'); // Add attribute
+        ogURL.setAttribute('content', 'https://www.getkisi.com/'); // Add attribute
+        document.head.appendChild(ogURL); // Add meta tag for open-graph image to the head
+
+        // Open-graph title
+        const ogTitle = document.createElement('meta'); // Create a meta tag for open-graph image
+        ogTitle.setAttribute('property', 'og:title'); // Add attribute
+        ogTitle.setAttribute('content', "NEW MOVIES & TV SHOWS"); //Add attribute
+        document.head.appendChild(ogTitle); // Add meta tag for open-graph image to the head
+
+        // Description
+        const metaDescription= document.createElement('meta'); // Create a meta tag for open-graph image
+        metaDescription.setAttribute('name', 'description'); // Add attribute
+        metaDescription.setAttribute('content', "NEW MOVIES & TV SHOWS FROM TMDB"); //Add attribute
+        document.head.appendChild(metaDescription); // Add meta tag for open-graph image to the head
+
+        // Link for Canonical
+        const canonicalUrl = document.createElement('link'); // Create a meta tag for open-graph image
+        canonicalUrl.setAttribute('rel', 'canonical'); // Add attribute
+        canonicalUrl.setAttribute('href', "https://www.getkisi.com/"); // Add attribute
+        document.head.appendChild(canonicalUrl); // Add meta tag for open-graph image to the head
+
+        // Create a markup schema
+        const seoSchema = {
+            "@context": "https://schema.org",
+            "@type": "Movie",
+                "name": "themoviedb",
+                "description": "themoviedb API results",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://example.com/1x1/photo.jpg"
+                }
+        };
+        // Inject the markup object into script
+        script.innerHTML = JSON.stringify(seoSchema);
+        
+    </script>
 </body>
 </html>
