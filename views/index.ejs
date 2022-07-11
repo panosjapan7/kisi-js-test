@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NEW MOVIES & TV SHOWS</title>
 </head>
 <body>
-    <div>HELLO</div>
+    <h2 class="category">MOVIES</h2>
+    <div class="moviesContainer">
+        <% apiData.forEach(movie => { %>
+            <% if(movie.media_type === "movie") { %>
+                <div class="movieContainer">
+                    <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="movie poster" class="moviePoster" />
+                    <% if(movie.title.length > 17) { %>
+                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title.replace(/ /g, '-')%>"><%= movie.title.slice(0, 17) %>...</a></h2>    
+                    <% }else { %>
+                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title.replace(/ /g, '-')%>"><%= movie.title %></a></h2>
+                    <% } %>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    
+    <h2 class="category">TV SHOWS</h2>
+    <div class="moviesContainer">
+        <% apiData.forEach(tvShow => { %>
+            <% if(tvShow.media_type === "tv") { %>
+                <div class="movieContainer">
+                    <img src="https://image.tmdb.org/t/p/w500<%= tvShow.poster_path %>" alt="movie poster" class="moviePoster" />
+                    <% if(tvShow.name.length > 25) { %>
+                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name.replace(/ /g, '-')%>"><%= tvShow.name.slice(0, 17) %>...</a></h2>    
+                    <% }else { %>
+                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name.replace(/ /g, '-')%>"><%= tvShow.name %></a></h2>
+                    <% } %>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
 </body>
 </html>

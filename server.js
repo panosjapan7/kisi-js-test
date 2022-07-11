@@ -6,7 +6,7 @@ const axios = require("axios");
 const PORT = 3000;
 
 // View engine setup
-app.set("view engine", "html");
+// app.set("view engine", "html");
 
 
 let apiData;
@@ -16,7 +16,6 @@ axios
     .then(res => {
         console.log("Status Code: ", res.status);
         apiData = res.data.results;
-        console.log(apiData);
     })
     .catch(error => {
         console.log(error);
@@ -25,7 +24,7 @@ axios
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", { apiData });
 })
 
 app.use("/", router);
