@@ -1,0 +1,51 @@
+* {
+    /* background-color: red; */
+}
+
+
+.category {
+    margin-top: 100px;
+    margin-left: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;        
+    font-size: 3em;
+    font-weight: 600;
+    color: black;
+}
+
+.moviesContainer, .tvShowsContainer {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 20px; */
+    max-width: 1000px;
+
+}
+
+.movieContainer, .tvShowContainer {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    pad: 1em;
+    max-width: 300px;
+}
+
+.movieTitle {
+    width: 200px;
+    margin-top: 5px;
+    font-size: 1.05rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    word-spacing: 1px;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+.moviePoster {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+}

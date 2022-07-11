@@ -5,10 +5,6 @@ const router = express.Router;
 const axios = require("axios");
 const PORT = 3000;
 
-// View engine setup
-// app.set("view engine", "html");
-
-
 let apiData;
 // GET data from API - Axios
 axios
@@ -21,7 +17,11 @@ axios
         console.log(error);
     })
 
+// Serve static files
 app.use(express.static(__dirname + "/public"));
+
+// View engine setup
+app.set("view engine", "html");
 
 app.get("/", (req, res) => {
     res.render("index.ejs", { apiData });
