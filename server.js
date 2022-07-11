@@ -23,8 +23,25 @@ app.use(express.static(__dirname + "/public"));
 // View engine setup
 app.set("view engine", "html");
 
+// Root Route
 app.get("/", (req, res) => {
     res.render("index.ejs", { apiData });
+})
+
+// Single Article Route
+app.get("/:category/:articleTitle", (req, res) => {
+    let selectedMovie;
+
+    // Find clicked Article 
+    for(let i=0; i < apiData.length; i++) {
+        if(apiData[i].title === req.params.articleTitle.replace(/-/g, ' ') || 
+            apiData[i].name === req.params.articleTitle.replace(/-/g, ' ')) {
+                selectedArticle = apiData[i];
+                console.log(selectedArticle);
+        }
+    }
+    
+    res.render("article.ejs", { selectedArticle });
 })
 
 app.use("/", router);
