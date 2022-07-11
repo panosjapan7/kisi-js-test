@@ -15,9 +15,9 @@
                 <div class="movieContainer">
                     <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="movie poster" class="moviePoster" />
                     <% if(movie.title.length > 17) { %>
-                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title.replace(/ /g, '-')%>"><%= movie.title.slice(0, 17) %>...</a></h2>    
+                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title%>"><%= movie.title.slice(0, 17) %>...</a></h2>    
                     <% }else { %>
-                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title.replace(/ /g, '-')%>"><%= movie.title %></a></h2>
+                        <h2 class="movieTitle"><a href="/<%=movie.media_type%>/<%=movie.title%>"><%= movie.title %></a></h2>
                     <% } %>
                 </div>
             <% } %>
@@ -31,9 +31,9 @@
                 <div class="movieContainer">
                     <img src="https://image.tmdb.org/t/p/w500<%= tvShow.poster_path %>" alt="movie poster" class="moviePoster" />
                     <% if(tvShow.name.length > 25) { %>
-                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name.replace(/ /g, '-')%>"><%= tvShow.name.slice(0, 17) %>...</a></h2>    
+                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name%>"><%= tvShow.name.slice(0, 17) %>...</a></h2>    
                     <% }else { %>
-                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name.replace(/ /g, '-')%>"><%= tvShow.name %></a></h2>
+                        <h2 class="movieTitle"><a href="/<%=tvShow.media_type%>/<%=tvShow.name%>"><%= tvShow.name %></a></h2>
                     <% } %>
                 </div>
             <% } %>

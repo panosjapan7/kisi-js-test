@@ -34,10 +34,9 @@ app.get("/:category/:articleTitle", (req, res) => {
 
     // Find clicked Article 
     for(let i=0; i < apiData.length; i++) {
-        if(apiData[i].title === req.params.articleTitle.replace(/-/g, ' ') || 
-            apiData[i].name === req.params.articleTitle.replace(/-/g, ' ')) {
+        if(apiData[i].title === req.params.articleTitle || 
+            apiData[i].name === req.params.articleTitle) {
                 selectedArticle = apiData[i];
-                console.log(selectedArticle);
         }
     }
     
