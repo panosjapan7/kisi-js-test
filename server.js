@@ -5,9 +5,13 @@ const router = express.Router;
 const axios = require("axios");
 const PORT = 3000;
 
+app.set("view engine", "html");
+
+
+
 
 app.get("/", (req, res) => {
-    res.send("Server Setup")
+    res.render("index.ejs");
 })
 
 app.use("/", router);
