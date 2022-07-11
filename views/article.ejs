@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="<%= selectedArticle.title %>" >
+    <meta name="og:image" content="https://image.tmdb.org/t/p/w500<%= selectedArticle.poster_path %>" >
+    <meta name="og:url" content="www.test.com" >
+    <link rel="canonical" href="https://www.test.com">
+    <meta name="description" content="<%= selectedArticle.overview %>" >
     <link href="/article.css" rel="stylesheet" type="text/css">
     <title>
         <% if(selectedArticle.title) {  %>
